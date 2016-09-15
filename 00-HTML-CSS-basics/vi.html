@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="name=value,name=value" name="viewport" />
+    <meta charset="utf-8">
+	<title>Form</title>
+    <style type="text/css">
+
+        div {
+            background-color: #DED8D8;
+            border: 2px solid #DED8D8;
+            border-radius: 5px;
+            margin: auto;
+            padding: 20px;
+            width: 75%;
+        }
+
+        h1 {
+            color: ;
+            font-size: 40px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
+        input, h1 {
+            border-radius: 5px;
+            display: block;
+            height: 25px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .but {
+            border-radius: 0;
+            display: unset;
+            margin: auto; 
+            width: 75%;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        textarea, select {
+            border-radius: 5px;
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div>
+    <h1>Form</h1>
+
+    <!-- ACTION MISSING -->
+    <form action="" method="get">
+        <label>First name: </label><br>
+        <input name="firstName" placeholder="Required" required type="text" /><br>
+        
+        <label>Last name: </label><br>
+        <input name="lastName" placeholder="Required" required type="text" /><br>
+        
+        <label>Email: </label><br>
+        <input name="email" placeholder="Enter a valid email address" type="email" /><br>
+        
+        <label>Birthday: </label><br>
+        <input name="birthday" required type="date" /><br>
+        
+        <label>Choose your favourite sport: </label><br>
+            <select name="sports">
+                <option>--------</option>
+                <option>Football</option>
+                <option>Tennis</option>
+                <option>Golf</option>
+                <option>Volleyball</option>
+            </select><br><br>
+        
+        <label>Small bio: </label><br>
+        <textarea cols="50" rows="4"></textarea><br><br>
+        
+        <table>
+            <tr>
+            <th><input class="but" name="submit" type="submit" value="Submit" /></th>
+            <th><input class="but" name="reset" type="reset" value="Reset" /></th>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
