@@ -457,6 +457,12 @@ p {
     width: 650px;
 }
 
+.col {
+  column-count: 3;
+  column-gap: 15px;
+  column-fill: auto;
+}
+
 .link {
     font-weight: bold;
 }
@@ -467,17 +473,23 @@ p {
 
 .header {
     display: block;
-    height: 200px;
-    padding: 5px;
-    vertical-align: middle;
+    height: 150px;
+    padding: 5px 0 5px 0;
 }
 
 .img {
+    bottom: auto;
+    column-break-inside: avoide;
     display: inline-block;
+    margin-bottom: 10px;
     padding: 5px;
     position: relative;
     vertical-align: top;
-    width: 33%;
+}
+
+.img.top {
+  bottom: 0;
+  vertical-align: top;
 }
 
 .img :hover {
@@ -514,10 +526,14 @@ p {
     filter: grayscale(0%);
 }
 
+.images {
+  margin: 50px auto;
+}
+
 .showcase {
     display: inline-block;
     font-weight: bold;  
-    margin-left: 15px;    
+    margin-left: 30px;    
     width: 100px;
 }
 
