@@ -1,55 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta content="name=value,name=value" name="viewport" />
-    <meta charset="utf-8">
-    <link href="style_2.3.css" rel="stylesheet" type="text/css">
-
- <!-- .......ITEM 6........ 
-    <style type="text/css">
-        
-        * {
-            font-size: 80px;
-        }
-
-    </style> -->
-
-    <title>CSS</title>
-</head>
-<body>
-
-<div class="wrapper">
-    <header class="header">
-        <font>header1</font>
-    </header>
-    <div class="subWrapper">
-        <nav class="navigation">
-            <font>nav</font>
-        </nav>
-        <section class="content">
-            <header class="hea2">   
-                <font>header2</font>
+    <head>
+        <meta charset="utf-8">
+        <meta content="Agustina Vighetti" name="author">
+        <meta content="Globant Bootcamp HTML and CSS Topic" name="description">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <link href="normalize.css" rel="stylesheet" type="text/css">
+        <link href="style_2.3.css" rel="stylesheet" type="text/css">
+        <!-- .......ITEM 6........ 
+        <style type="text/css">
+            * {
+                font-size: 80px;
+            }
+        </style> -->
+        <title>CSS</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="wrapper--header">
+                <font>header1</font>
             </header>
-            <article>
-                <font>article</font>
-            </article>
-            <footer class="foo1">
-                <font>footer1</font>
+            <div class="sub-wrapper">
+                <nav class="sub-wrapper--navigation">
+                    <font>nav</font>
+                </nav>
+                <section class="content">
+                    <header class="content--header">   
+                        <font>header2</font>
+                    </header>
+                    <article class="content--article">
+                        <font>article</font>
+                    </article>
+                    <footer class="content--footer">
+                        <font>footer1</font>
+                    </footer>
+                </section>
+                <aside class="sub-wrapper--sidebar">
+                    <font>aside</font>
+                </aside>
+            </div>
+            <footer class="wrapper--footer">
+                <font>footer2</font>
             </footer>
-        </section>
-        <aside class="sidebar">
-            <font>aside</font>
-        </aside>
-    </div>
-    <footer class="footer">
-        <font>footer2</font>
-    </footer>
-<!-- ......ITEM 7......... -->
-<div class="oh-no-inline-styles" style="background:red">
-    <p>something</p>
-</div>
-    
-</div>
-
-</body>
+            <!-- ......ITEM 7......... -->
+            <div class="oh-no-inline-styles" style="background:red">
+                <p>something</p>
+            </div>
+        </div>
+    </body>
 </html>

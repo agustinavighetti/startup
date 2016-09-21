@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta content="name=value,name=value" name="viewport" />
-    <meta charset="utf-8">
-    <link href="style_2.1.css" rel="stylesheet" type="text/css">
-    <title>CSS</title>
-</head>
-<body>
-
-<div class="wrapper">
-    <header class="hea1">
-        header1
-    </header>
-    <div class="subWrapper">
-        <nav>
-            nav
-        </nav>
-        <section>
-            <header class="hea2">   
-                header2
+    <head>
+        <meta charset="utf-8">
+        <meta content="Agustina Vighetti" name="author">
+        <meta content="Globant Bootcamp HTML and CSS Topic" name="description">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <link href="normalize.css" rel="stylesheet" type="text/css">
+        <link href="style_2.1.css" rel="stylesheet" type="text/css">
+        <title>CSS</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="wrapper--header">
+                header1
             </header>
-            <article>
-                article
-            </article>
-            <footer class="foo1">
-                footer1
+            <div class="sub-wrapper">
+                <nav class="sub-wrapper--nav">
+                    nav
+                </nav>
+                <section class="container">
+                    <header class="container--header">   
+                        header2
+                    </header>
+                    <article  class="container--article">
+                        article
+                    </article>
+                    <footer class="container--footer">
+                        footer1
+                    </footer>
+                </section>
+                <aside class="sub-wrapper--aside">
+                    aside
+                </aside>
+            </div>
+            <footer class="wrapper--footer">
+                footer2
             </footer>
-            
-        </section>
-        <aside>
-            aside
-        </aside>
-    </div>
-    <footer class="foo2">
-        footer2
-    </footer>
-    
-</div>
-
-</body>
+        </div>
+    </body>
 </html>
