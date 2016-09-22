@@ -10,38 +10,44 @@
         <title>Form</title>
     </head>
     <body>
-        <div>
+        <div class="cointainer">
             <h1>Form</h1>
             <!-- ACTION MISSING -->
-            <form action="" method="get">
-                <label>First name: </label><br>
-                <input name="firstName" placeholder="Required" required type="text" /><br>
-                
-                <label>Last name: </label><br>
-                <input name="lastName" placeholder="Required" required type="text" /><br>
-                
-                <label>Email: </label><br>
-                <input name="email" placeholder="Enter a valid email address" type="email" /><br>
-                
-                <label>Birthday: </label><br>
-                <input name="birthday" required type="date" /><br>
-                
-                <label>Choose your favourite sport: </label><br>
-                    <select name="sports">
+            <form action="" class="form" method="get">
+            <section class="form--item">
+                <label>First name: </label>
+                <input class="box" name="firstName" placeholder="Required" required type="text" />
+            </section>
+            <section class="form--item">
+                <label>Last name: </label>
+                <input class="box" name="lastName" placeholder="Required" required type="text" />
+            </section>
+            <section class="form--item">
+                <label>Email: </label>
+                <input class="box" name="email" placeholder="Enter a valid email address" type="email" />
+            </section>
+            <section class="form--item">
+                <label>Birthday: </label>
+                <input class="box" name="birthday" required type="date" />
+            </section>
+            <section class="form--item">
+                <label>Choose your favourite sport: </label>
+                    <select class="box" name="sports">
                         <option>--------</option>
                         <option>Football</option>
                         <option>Tennis</option>
                         <option>Golf</option>
                         <option>Volleyball</option>
-                    </select><br><br>
-                
-                <label>Small bio: </label><br>
-                <textarea cols="50" rows="4"></textarea><br><br>
-                
+                    </select>
+            </section>
+            <section class="form--item">
+                <label>Small bio: </label>
+                <textarea class="box box_height" cols="50" rows="4"></textarea>
+            </section>
                 <table>
                     <tr>
-                    <th><input class="but" name="submit" type="submit" value="Submit" /></th>
-                    <th><input class="but" name="reset" type="reset" value="Reset" /></th>
+                    <th><button class="button" name="submit" type="submit" value="Submit">Submit</button></th>
+                    <th><button class="button" name="reset" type="reset" value="Reset">Reset</button></th>
                     </tr>
                 </table>
             </form>
