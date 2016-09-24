@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="Agustina Vighetti" name="author">
+        <meta content="Globant Bootcamp HTML and CSS Topic" name="description">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <link href="normalize.css" rel="stylesheet" type="text/css">
+        <link href="layout2.6_js.css" rel="stylesheet" type="text/css">
+    <!-- THIS SCRIPT IS JUST TO FIX THE BUG I HAD WITH THE COLOR OF THE IMAGES WHEN THE MOUSE POINTER WAS OVER THE TEXT -->    
+        <script href=script2.6.js type="text/javascript"></script>
+        <title>Layout</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <p class="showcase">Showcase</p>
+                <aside>
+                    <p>
+                        Incredible Types is a curated collection and showcase of outstanding typography and desing from around 
+                        the world. We currently have 354 pieces of inspirational desing in our showcase, from 365 creatives 
+                        and studios from 46 different countries.
+                    </p>
+                    <p>
+                        Follow us on <span class="link"><a href="#">Twitter</a></span>, <span class="link"><a href="#">Facebook</a></span> and
+                        <span class="link"><a href="#">Pinterest</a></span> or suscribe to our <span class="link"><a href="#">RSS Feed</a></span>
+                    </p>
+                </aside>
+            </div>
+            <div class="images">
+                <div class="col">
+                    <div class="img top">
+                        <a href="#"><img id="i1" onmouseover="color1()" onmouseout="nocolor1()" src="img1.jpg"></a><span class="tooltip" onmouseover="color1()" onmouseout="nocolor1()"><a class="tit" href="#">Title</a><br><a class="des" href="#">description</a></span>
+                    </div>
+                    <div class="img top">
+                        <a href="#"><img id="i2" onmouseover="color2()" onmouseout="nocolor2()" src="img2.jpg"></a><span class="tooltip" onmouseover="color2()" onmouseout="nocolor2()"><a class="tit" href="#">Title</a><br><a class="des" href="#">description</a></span>
+                    </div>
+                    <div class="img top">
+                        <a href="#"><img id="i3" onmouseover="color3()" onmouseout="nocolor3()" src="img3.jpg"></a><span class="tooltip" onmouseover="color3()" onmouseout="nocolor3()"><a class="tit" href="#">Title</a><br><a class="des" href="#">description</a></span>
+                    </div>
+                    <div class="img">
+                        <a hef="#"><img id="i4" onmouseover="color4()" onmouseout="nocolor4()" src="img4.jpg"></a><span class="tooltip" onmouseover="color4()" onmouseout="nocolor4()"><a class="tit" href="#">Title</a><br><a class="des" href="#">description</a></span>
+                    </div>
+                    <div class="img">
+                        <a href="#"><img id="i5" onmouseover="color5()" onmouseout="nocolor5()" src="img5.jpg"></a><span class="tooltip" onmouseover="color5()" onmouseout="nocolor5()"><a class="tit" href="#">Title</a><br><a class="des" href="#">description</a></span>
+                    </div>
+                    <div class="img">
+                        <a href="#"><img id="i6" onmouseover="color6()" onmouseout="nocolor6()" src="img6.jpg"></a><span class="tooltip" onmouseover="color6()" onmouseout="nocolor6()"><a class="tit" href="#">Title</a><br><a class="des" href="#">description</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

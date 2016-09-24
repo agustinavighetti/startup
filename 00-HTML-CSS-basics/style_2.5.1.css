@@ -1,0 +1,90 @@
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    padding: 2px;
+}
+
+p {
+    display: inline-block;
+    margin: auto;
+}
+
+body {
+    background-color: black;
+    font-family: verdana;
+    font-size: 14px;
+}
+
+.wrapper {
+    background-color: black;
+    padding: 5px;
+}
+
+.wrapper--header {
+    background-color: magenta;
+    font-size: 46px;
+}
+
+.sub-wrapper--sub {
+    display: inline-block;
+    height: 500px;
+    vertical-align: middle;
+}
+
+.sub-wrapper--nav {
+    background-color: blue;
+    font-size: 12px;
+    width: 20%;
+}
+
+.content {
+    background-color: white;
+    display: inline-table;
+    font-size: 14px;
+    padding-bottom: 0;
+    width: 59.25%;
+}
+
+.content--header {
+    background-color: orange;
+    height: 10%;
+}
+
+.content--article {
+    height: 80%;
+}
+
+.content--footer {
+    background-color: orange;
+    height: 10%;
+}
+
+.sub-wrapper--sidebar {
+    background-color: magenta;
+    font-size: 10px;
+    width: 20%;
+}
+
+.wrapper--footer {
+    background-color: magenta;
+    font-size: 10px;
+    height: 50px;
+}
+
+.wrapper--header, .wrapper--footer {
+    text-align: center;
+}
+
+.wrapper--header, .sub-wrapper--sub, .wrapper--footer {
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.content--header, .content--footer {
+    border-radius: 5px;
+}
