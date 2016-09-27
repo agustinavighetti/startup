@@ -55,12 +55,11 @@ function movies() {
         }
 
         addCast(cast) {
-            console.log('addCast');
-            console.log(this.castArray);
-            console.log(this.castArray.length);
-            this.castArray.push.apply(this.castArray, cast);
-            console.log(this.castArray);
-            console.log(this.castArray.length);
+            if (cast.length > 0) {
+                this.castArray.push.apply(this.castArray, cast);
+            } else {
+                this.castArray.push(cast);
+            };
         }
     }
 
@@ -110,19 +109,34 @@ function movies() {
     xmen.like('Aguss Vighetti');
 */
 // EXAMPLES FOR EXERCISE 8
-    let james = [new Actor('James McAvoy', 1979)];
+    let show = function() {
+        let cast = '';
+        for (let i = 0; i < xmen.castArray.length; i++) {
+            cast = cast + xmen.castArray[i].fullName + ', ';
+        }
+        if (xmen.castArray.length > 1) {
+            return `The cast of ${xmen.title} is ${cast}and there are ${xmen.castArray.length} actors.`;
+        } else {
+            return `The cast of ${xmen.title} is ${cast}and there is ${xmen.castArray.length} actor.`
+        }
+    };
+    let james = new Actor('James McAvoy', 1979);
     let otherCast = [
     new Actor('Hugh Jackman', 1968),
     new Actor('Michael Fassbender', 1977),
     new Actor('Jennifer Lawrence', 1990)
     ];
-    let nicholas = [new Actor('Nicholas Hoult', 1989)];
+    let nicholas = new Actor('Nicholas Hoult', 1989);
     let otherOtherCast = [
     new Actor('Patrick Stewart', 1940),
     new Actor('Ian McKellen', 1939)
     ];
     xmen.addCast(james);
+    console.log(show());
     xmen.addCast(otherCast);
+    console.log(show());
     xmen.addCast(otherOtherCast);
+    console.log(show());
     xmen.addCast(nicholas);
+    console.log(show());
 }
