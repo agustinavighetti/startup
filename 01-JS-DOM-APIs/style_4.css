@@ -1,0 +1,114 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    background-image: url(img.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    background-color: #0C8A74;
+    display: inline-block;
+    padding: 3px;
+    font-size: 55px;
+    text-shadow: 3px 3px blue;
+}
+
+#border {
+    border: 5px solid white;
+    border-radius: 10px;
+    height: 200px;
+    margin-top: 50px;
+}
+
+.conteiner--header {
+    color: white;
+    border: 5px solid white;
+    border-radius: 15px;
+    margin: 5px 100px 50px 100px;
+}
+
+.conteiner--footer {
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 30px;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.footer-text {
+    color: green;
+    font-size: 10px;
+    margin: auto;
+}
+
+.conteiner--subcont {
+    height: auto;
+    margin: auto;
+    width: 50%;
+    height: 400px;
+}
+
+.hid {
+    font-size: 20px;
+    line-height: 180px;
+}
+
+.subcont--text {
+    background-color: #0C8A74;
+    color: white;
+    display: inline-block;
+    font-size: 30px;
+    padding: 3px;
+    text-shadow: 2px 2px red;
+}
+
+#hid {
+    background-color: white;
+    background-size: 300px 200px;
+    margin: auto;
+    display: inline-block;
+    height: 190px;
+    width: 100%;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

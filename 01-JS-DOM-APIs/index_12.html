@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="Agustina Vighetti" name="author">
+        <meta content="Globant Bootcamp HTML and CSS Topic" name="description">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <link href="normalize.css" rel="stylesheet" type="text/css">
+        <link href="style_12.css" rel="stylesheet" type="text/css">
+        <script src="script_12.js" type="text/javascript"></script>
+        <title>Item 12</title>
+    </head>
+    <body class="body" id="body">
+        <div class="container">
+            <header class="container--header">
+                <h1 class="header--h1">WELCOME</h1>
+                <p class="container--text">Choose your team!</p>        
+            </header>
+            <div class="container--subcont">
+                <section class="subcont--wrapper">
+                    <section class="wrapper--left_first box" id="left">
+                        <input class="left--input" type="radio" name="input" value="BocaJuniors"> Boca Juniors
+                        <br><br>
+                        <input class="left--input" type="radio" name="input" value="NewellsOldBoys"> Newell's Old Boys
+                        <br><br>
+                        <input class="left--input" type="radio" name="input" value="RiverPlate"> River Plate
+                        <br><br>
+                        <input class="left--input" type="radio" name="input" value="RosarioCentral"> Rosario Central
+                    </section>
+                    <section class="wrapper--right_hid box" id="wrapper--right">
+                        <section id="right--table">
+                            <p id="old"></p>
+                        </section>
+                    </section>
+                </section>
+                <button class="subcont--button" onclick="display();">Submit</button>
+            </div>
+            <footer class="container--footer">
+                <p class="end">Hope you come back soon!</p>
+            </footer>
+        </div>
+    </body>
+</html>

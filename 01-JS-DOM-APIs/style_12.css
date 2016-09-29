@@ -1,0 +1,164 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.body {
+    background-attachment: fixed;
+    background-image: url(img3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.body_BocaJuniors {
+    background-image: url(boca.jpg);
+    background-repeat: repeat;
+    background-size: 50px;
+}
+
+.body_NewellsOldBoys {
+    background-image: url(nob.jpg);
+    background-repeat: repeat;
+    background-size: 50px;
+}
+
+.body_RiverPlate {
+    background-image: url(river.jpg);
+    background-repeat: repeat;
+    background-size: 50px;
+}
+
+.body_RosarioCentral {
+    background-image: url(rc.jpg);
+    background-repeat: repeat;
+    background-size: 50px;
+}
+
+.box {
+    background-image: url(back.jpg);
+    border: 5px solid white;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    height: 100%;
+    min-height: 100px;
+    padding: 20px;
+    vertical-align: top;
+}
+
+.container--footer {
+    background-image: url(back.jpg);
+    border-radius: 10px;
+    color: #FF872E;
+    font-size: 15px;
+    height: 30px;
+    padding: 6px;
+    text-align: center;
+    width: 100%;
+}
+
+.container--header {
+    background-image: url(back.jpg);
+    color: #FF872E;
+    height: 200px;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.container--subcont {
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin: 20px 0 auto;
+}
+
+.container--text {
+    color: #FF872E;
+    display: block;
+    font-size: 30px;
+    margin: -20px auto;
+    text-shadow: 2px 2px black;
+}
+
+.desc_hid {
+    display: inline-block;
+    visibility: hidden;
+}
+
+.desc_show {
+    display: inline-block;
+    visibility: visible;
+}
+
+.end {
+    margin: auto;
+}
+
+.header--h1 {
+    display: inline-block;
+    padding: 3px;
+    font-size: 60px;
+    text-shadow: 3px 3px black;
+}
+
+.left--input {
+    margin-left: 10px;
+}
+
+.subcont--button {
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.subcont--wrapper {
+    margin-bottom: 50px;
+    display: block;
+    height: 100%;
+}
+
+.table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.wrapper--right_hid {
+    text-align: left;
+    display: none;
+    width: 70%;
+}
+
+.wrapper--right_show {
+    text-align: left;
+    width: 70%;
+}
+
+.wrapper--left_after { 
+    margin-right: 40px;
+    text-align: left;
+    width: 25%;
+}
+
+.wrapper--left_first { 
+    display: inline-block;
+    text-align: left;
+    width: 30%;
+}
+
+.td, .th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.tr:nth-child(even) {
+    background-color: #dddddd;
+    color: black;
+    border: 1px solid black;
+}
