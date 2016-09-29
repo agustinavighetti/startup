@@ -1,41 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Item 9</title>
-	<link href="style_9.css" rel="stylesheet" type="text/css">
-	<script src="script_9.js" type="text/javascript"></script>
-
-</head>
-
-<body>
-<div class="conteiner">
-	<header>
-	<h1>Welcome</h1>		
-	</header>
-	<div class="subcont">
-			<p class="one">Hi! Click the button to see the results!</p>
-		<section class="wrapper">
-			<section class="left box">
-				<p id="fat1">
-					Searching: <span id="name"></span>
-				</p>
-				<p class="desc_hid" id="desc_hid">
-					There have been found <span id="number"></span> results by the name <span id="name1"></span>.
-				</p>
-			</section>
-			<section class="right box">
-				<section id="list">
-					<p id="oldList"></p>
-			</section>
-		</section>
-		<button onclick="display();">Click me!</button>
-	</div>
-	<footer>
-		<p class="end">Hope you come back soon!</p>
-	</footer>
-</div>
-
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="Agustina Vighetti" name="author">
+        <meta content="Globant Bootcamp HTML and CSS Topic" name="description">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <link href="normalize.css" rel="stylesheet" type="text/css">
+		<link href="style_9.css" rel="stylesheet" type="text/css">
+		<script src="script_9.js" type="text/javascript"></script>
+		<title>Item 9</title>
+	</head>
+	<body>
+		<div class="container">
+			<header class="container--header">
+				<h1>Welcome</h1>		
+			</header>
+			<div class="container--subcont">
+				<p class="subcont--text">Hi! Click the button to see the results!</p>
+				<section class="subcont--wrapper">
+					<section class="wrapper--box wrapper--box_left">
+						<p id="name-father">
+							Searching: <span id="name"></span>
+						</p>
+						<p class="box--desc_hid" id="box--desc_hid">
+							There have been found <span id="box--number"></span> results by the name <span id="box--name"></span>.
+						</p>
+					</section>
+					<section class="wrapper--box wrapper--box_right">
+						<section id="list">
+							<p id="oldList"></p>
+					</section>
+				</section>
+				<button class="subcont--button" onclick="display();">Click me!</button>
+			</div>
+			<footer class="container--footer">
+				<p class="footer-text">Hope you come back soon!</p>
+			</footer>
+		</div>
+	</body>
 </html>
-
-
