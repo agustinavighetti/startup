@@ -1,0 +1,21 @@
+.table {
+    border-collapse: collapse;
+    width:100%;
+}
+
+.table--row_background {
+    background-color:#CAC9C9;
+}
+
+.table--row--th {
+    background-color: #1DB312;
+    height: 45px;
+}
+
+.table--row--td {
+    text-align: center;
+}
+
+.table, .table--row--th, .table--row--td {
+    border: 1px solid grey;
+}

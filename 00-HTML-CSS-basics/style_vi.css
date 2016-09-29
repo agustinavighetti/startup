@@ -1,0 +1,42 @@
+h1 {
+    display: block;
+    font-size: 40px;
+    margin: auto;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+.cointainer {
+    background-color: #DED8D8;
+    border: 2px solid #DED8D8;
+    border-radius: 5px;
+    margin: auto;
+    padding: 20px;
+    width: 75%;
+}
+
+.box {
+    border-radius: 5px;
+    display: block;
+    height: 25px;
+    margin: auto;
+    width: 100%;
+}
+
+.box_height {
+    height: 100px;
+}
+
+.form--item {
+    display: block;
+    margin: 10px 5px 25px 5px;
+}
+
+.button {
+    border-radius: 0;
+    margin: auto; 
+    width: 75%;
+}
