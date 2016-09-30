@@ -1,7 +1,7 @@
 let indexedDB = window.indexedDB || window.mozIndexedDEb || window.webkitIndexedDB || window.msIndexedDB;
 let dataBase = null;
 
-window.onload = startDB();;
+window.onload = startDB();
 
 function saveText () {
     saveTextLS();
@@ -34,7 +34,7 @@ function saveTextLS () {
 function startDB () {
     dataBase = indexedDB.open('object', 1);
 // se ejecuta cuando se crea o se cambia la version de dataBase.
-    dataBase.onupgradneeded = function (e) { 
+    dataBase.onupgradeneeded = function (e) { 
         let active;
         let object;
 
