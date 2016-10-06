@@ -1,0 +1,38 @@
+<!-- Create a page with a textarea and a save button. Save textarea content's when the user clicks on save. Use both localStorage and IndexedDB.
+
+Add a clear button to erase saved content.
+
+Add drag and drop support to load text files.
+
+Open a web socket and test it against this echo service.
+
+Create a web page with a canvas element. Upon page load draw basic geometric figures with random colors and strokes.
+
+Using the Canvas API animate a rectangle's position on the screen. Make sure not to use setTimeout but requestTimeFrame to perform the animation.
+
+Create a web page with a SVG element to show a vector graphic. Make sure you understand when is better to use SVG instead of bitmaps, and viceversa. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="Agustina Vighetti" name="author">
+        <meta content="Globant Bootcamp HTML and CSS Topic" name="description">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <link href="normalize.css" rel="stylesheet" type="text/css">
+        <link href="index_2.css" rel="stylesheet" type="text/css"">
+        <script src="index_2.js" type="text/javascript"></script>
+        <title>Topic 4</title>
+    </head>
+    <body class="body">
+        <div class="container">
+            <header class="container--header">
+                <h1 class="header--text">Insert your text</h1>
+            </header>
+            <section class="container--section" id="container--section">
+                <input class="section--textarea" id="section--textarea" type="textarea" name="textarea">
+                <button class="section--button" onclick="saveText();">Save</button>
+                <button class="section--button" onclick="clearAll();">Clear</button>
+            </section>
+        </div>
+    </body>
+</html>

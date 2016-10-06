@@ -1,0 +1,70 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.body {
+    background-attachment: fixed;
+    background-image: url(img6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+
+}
+
+.container--header {
+    background-image: url(img5.jpg);
+    height: 200px;
+    margin: 0;
+    padding-top: 70px;
+}
+
+.container--section {
+
+}
+
+.header--text {
+    color: white;
+    display: inline-block;
+    font-size: 50px;
+    margin: auto;
+    text-shadow: 2px 2px #C6C0C0;
+}
+
+.section--button {
+    background: url('button.gif');
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    font: bold 13px Arial;
+    height: 30px;
+    margin: 0px 100px;
+    width: 70px;
+}
+
+.section--textarea{
+    border-radius:3px;
+    border:1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px black;
+    display: block;
+    height: auto;
+    margin-top: 50px;
+    margin: 50px auto;
+    min-height: 300px;
+    outline:none;
+    padding: auto;
+    padding:10px;
+    transition: all 0.15s ease-in-out;
+    width: 600px;
+}
+
+.section--textarea:focus {
+    border:2px solid #D5D2D2;
+    box-shadow: 0 0 10px white;
+}
