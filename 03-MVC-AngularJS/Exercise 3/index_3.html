@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="index_3.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" type="text/javascript"></script>
+        <script src="index_3.js" type="text/javascript"></script>
+        <title></title>
+    </head>
+    <body class="body" data-ng-app="myApp">
+        <div class="container" data-ng-controller="MovieController">
+            <header class="container--header">
+                <img src="imagen.png" />
+            </header>
+            <section class="container--wrapper">
+                <section class="wrapper--control">
+                    <span class="control--span">{{ remaining() }} of {{ movies.length }} remaining</span>
+                    <button class="control-delete button" data-ng-click="archive()">Remove Selected Items</button>
+                </section>
+                <ul class="wrapper--list" data-ng-submit="showDetails()">
+                    <li class="list--item" data-ng-repeat="movie in movies track by $index">
+                        <input class="list--input" type="checkbox" data-ng-model="movie.watched">
+                        <span class="item--detail_name" data-ng-model="movie.text">{{ movie.text }}</span>
+                        <button class="item--button button" ng-model="detailsShow" ng-click="show = !show">Details</button>
+                        <div class="item--hide" ng-show="show">
+                            
+                            <span class="hide--detail hide--detail_year">Year: {{ movie.year }}</span>
+                            <button class="hide--edit button" ng-model="editYear" ng-click="showYear = !showYear">Edit</button>
+                            
+                            <form class="hide--new movie-form" data-ng-submit="saveYear(movie, movie.text, newYear)" ng-show="showYear">
+                                <label class="new--label">New year:</label><input class="new--input" type="text" data-ng-model="newYear" placeholder="Enter new movie year" required />
+                                <button class="new--save button">Save</button>
+                            </form>
+
+                            <span class="hide--detail">Duration: {{ movie.duration }}</span>
+                            <button class="hide--edit button" ng-model="editDuration" ng-click="showDuration = !showDuration">Edit</button>
+                            
+                            <form class="hide--new movie-form" ng-show="showDuration">
+                                <label class="new--label">New duration:</label><input class="new--input" type="text" data-ng-model="newDuration" placeholder="Enter new movie duration" required />
+                                <button class="new--save button" ng-click="saveDuration(movie, movie.text, newDuration)">Save</button>
+                            </form>
+
+                            <!--<label>New name:</label><input class="form--input" type="text" data-ng-model="name" placeholder="Enter new movie name" required /> -->
+                        
+                        </div>
+                    </li>
+                </ul>
+                <form class="wrapper--form" data-ng-submit="addMovie()" class="movie-form">
+                    <h3 class="form--title">Add a movie to the list!</h3>
+                    <div class="form">
+                        <label class="form--label">New movie name:</label><input class="form--input" type="text" data-ng-model="name" placeholder="Enter new movie name" required />
+                    </div>
+                    <div class="form">
+                        <label class="form--label">New movie year:</label><input class="form--input" type="text" data-ng-model="year" placeholder="Enter new movie year" required />
+                    </div>
+                    <div class="form">
+                        <label class="form--label">New movie duration:</label><input class="form--input" type="text" data-ng-model="duration" placeholder="Enter new movie duration" required/>
+                    </div>
+                    <button class="form--button button">Add Movie</button>
+                </form>
+            </section>
+        </div>
+    </body>
+</html>
