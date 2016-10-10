@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="Agustina Vighetti" name="author">
+        <meta content="Globant Bootcamp HTML and CSS Topic" name="description">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <link href="normalize.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="Topic3_1.css">
+        <script src="Topic3_1.js" type="text/javascript"></script>
+        <title>Topic 3</title>
+    </head>
+    <body class="body">
+        <header class="app--header">
+            Movies
+        </header>
+        <div class="app" ng-app="myApp">
+            <div class="app--movie" ng-controller="MovieCtrl">
+                <li class="list--item" ng-repeat="movie in movies">
+                    {{ movie.name }}
+                </li>
+            </div>  
+        </div>
+    </body>
+</html>

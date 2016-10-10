@@ -1,0 +1,40 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.app {
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    width: 60%;
+}
+
+.app--header {
+    background-image: url('img5.jpg');
+    color: white;
+    font-family: verdana;
+    font-size: 100px;
+    height: 200px;
+    padding-top: 30px;
+    text-align: center;
+    text-shadow: 3px 3px #0E8C58;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.app--movie {
+    display: inline-block;
+    text-align: left;
+}
+
+.body {
+    background-image: url('img2.jpg');
+}
+
+.list--item {
+    color: white;
+    margin-bottom: 20px;
+}
