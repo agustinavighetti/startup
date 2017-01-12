@@ -1,7 +1,9 @@
 .App {
   text-align: center;
   background-color: rgb(187, 189, 194);
-  height: 1000px;
+  height: auto;
+  min-height: 900px;
+  padding-bottom: 30px;
 }
 
 .App-button {
@@ -45,6 +47,12 @@
 	top:1px;
 }
 
+.App-button--delete {
+  display: inline-block;
+  float: left;
+  margin: 15px 0 0 10px;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -71,13 +79,10 @@
   width: 80%;
 }
 
-.option-arrow {
-  vertical-align: middle;
-}
-
 .item-label {
   text-align: right;
   padding-right: 30px;
+  font-weight: bold;
 }
 
 .item-input {
@@ -85,28 +90,50 @@
   float: right;
 }
 
-.option-box {
-  -moz-box-shadow: 0px 0px 10px #ffffff;
-  -webkit-box-shadow: 0px 0px 10px #ffffff;
-  background-color: rgb(211, 215, 222);
-  box-shadow: 0px 0px 10px #ffffff;
-  border: solid #fff 2px;
-  border-radius: 5px;
-  border-top: none;
-  padding: 1px 30px 15px 30px;
-  min-height: 35px;
+li {
+  display: block;
+  list-style: none;
+}
+
+.ListMovie {
+  background-color: white;
+  border-bottom: solid black 2px;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.ListMovie-items {
+  display: inline-block;
+  width: 80%;
+}
+
+.ListItem-data {
+  display: inline;
+  margin-left: 5px;
+}
+
+.ListItem-item {
+  text-align: left;
+}
+
+.ListItem-label {
+  display: inline-block;
+  font-weight: bold;
 }
 
 .MovieList-counter {
-  display: inline-block;
-  float: left;
   text-align: left;
 }
 
 .MovieList-selected {
-  display: inline-block;
-  float: right;
   text-align: right;
+}
+
+.MovieList-selected, .MovieList-counter {
+  display: inline-block;
+  width: 50%;
 }
 
 .Movie-item {
@@ -133,10 +160,30 @@
   background-color: rgb(81, 16, 150);
 }
 
+.option-arrow {
+  vertical-align: middle;
+}
+
+.option-box {
+  -moz-box-shadow: 0px 0px 10px #ffffff;
+  -webkit-box-shadow: 0px 0px 10px #ffffff;
+  background-color: rgb(211, 215, 222);
+  box-shadow: 0px 0px 10px #ffffff;
+  border: solid #fff 2px;
+  border-radius: 5px;
+  border-top: none;
+  padding: 1px 30px 15px 30px;
+  min-height: 35px;
+}
+
 .option-title {
   color: #fff;
   display: inline-block;
   margin-right: 35%;
+}
+
+ul {
+  padding: 0;
 }
 
 @keyframes App-logo-spin {

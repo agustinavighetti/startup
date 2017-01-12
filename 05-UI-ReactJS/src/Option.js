@@ -15,7 +15,6 @@ const Option = React.createClass({
 
   render() {
     return (
-
       <div className="App-option">
         <button onClick={this.onClick} className="option">
           <h2 className="option-title">{this.props.title}</h2>
@@ -23,7 +22,6 @@ const Option = React.createClass({
         </button>
         {this.renderContent()}
       </div>
-
     )
   },
 

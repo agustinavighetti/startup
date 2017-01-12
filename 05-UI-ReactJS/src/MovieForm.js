@@ -8,6 +8,7 @@ const MovieForm = React.createClass({
       name:'',
       year: '',
       duration: '',
+      id: '',
       movies: this.props.movies
     }
   },
