@@ -2,6 +2,11 @@ import React from 'react';
 
 const ListItem = React.createClass({
 
+  propTypes: {
+    label: React.PropTypes.string.isRequired,
+    data: React.PropTypes.string.isRequired
+  },
+
   render() {
     return (
       <div className="ListItem-item">
