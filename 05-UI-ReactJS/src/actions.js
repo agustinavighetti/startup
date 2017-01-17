@@ -10,10 +10,10 @@ export function addMovie(movie) {
   }
 }
 
-export function removeMovie(index) {
+export function removeMovie(id) {
   return {
     type: REMOVE_MOVIE,
-    index
+    id: id
   }
 }
 
@@ -23,10 +23,10 @@ export const VisibilityFilters = {
   SHOW_NON_WATCHED: 'SHOW_NON_WATCHED'
 }
 
-export function toggleMovie(index) {
+export function toggleMovie(id) {
   return {
     type: TOGGLE_MOVIE,
-    index
+    id: id
   }
 }
 

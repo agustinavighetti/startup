@@ -9,24 +9,22 @@ const MovieForm = React.createClass({
       name:'',
       year: '',
       duration: '',
-      watched: '' //,
-      // movies: this.props.movies
+      watched: '',
+      id: this.props.movies.length
     }
   },
 
   click: function() {
-    var moviesObject;
 
     if ((this.state.name === '') || (this.state.year === '') || (this.state.duration === '')) {
       alert('You have to fill in all the items!');
     } else if (this.state.watched === '') {
       alert('You have to indicate if you have seen this movie!')
     } else {
+      this.setState({
+        id: (this.props.movies.length + 1)
+      });
       this.props.onMovieAdd(this.state);
-
-      moviesObject = this.props.movies;
-      moviesObject.push(this.state);
-      localStorage.setItem('movies', JSON.stringify(moviesObject));
 
       this.setState({
         name: '',
@@ -80,7 +78,7 @@ const MovieForm = React.createClass({
 
     newState[field] = event.target.value;
 
-    this.setState(newState)
+    this.setState(newState);
   },
 
   watched: function() {

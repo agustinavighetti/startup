@@ -42,7 +42,7 @@ const MovieList = React.createClass({
   renderList: function () {
     let moviesList = this.props.movies.map((movie, index) =>
       <div key={index} className="ListMovie">
-        <button className="App-button App-button--delete" type="button" onClick={this.deleteMovie.bind(this, index)}>
+        <button className="App-button App-button--delete" type="button" onClick={this.deleteMovie.bind(this, movie.id)}>
           Delete
         </button>
         <li className="ListMovie-items">
@@ -51,7 +51,7 @@ const MovieList = React.createClass({
           <ListItem label="Duration: "data={movie.duration} />
           {this.watchedLabel(movie.watched)}
         </li>
-        <button onClick={this.toggleMovie.bind(this, index)}>
+        <button onClick={this.toggleMovie.bind(this, movie.id)}>
           Change watched status
         </button>
       </div>
@@ -62,18 +62,16 @@ const MovieList = React.createClass({
     )
 
   },
-// al cambiar el status de la movie con index en field, cuando cambias el index 0 en SHOW_WATCHED cambia la movie 0 en SHOW_ALL
+
   toggleMovie: function (field, event) {
     this.props.onToggleMovie(field);
     console.log(field);
 
-    localStorage.setItem('movies', JSON.stringify(this.props.movies))
   },
 
   deleteMovie: function (field, event) {
     this.props.onMovieRemove(field);
-
-    localStorage.setItem('movies', JSON.stringify(this.props.movies))
+    console.log('MOVIES  ',this.props.movies);
   },
 
   render() {

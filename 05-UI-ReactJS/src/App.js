@@ -22,7 +22,7 @@ let App = React.createClass({
           </p>
           <Option title="Add a new movie" option={<MovieForm movies={this.props.movies} onMovieAdd={this.props.onMovieAdd} />} />
           <Option title="Watch your list of movies" option={<MovieList movies={this.props.movies} onMovieRemove={this.props.onMovieRemove}
-          index={this.index} onSetVisibilityFilter={this.props.onSetVisibilityFilter} onToggleMovie={this.props.onToggleMovie} />} />
+          onSetVisibilityFilter={this.props.onSetVisibilityFilter} onToggleMovie={this.props.onToggleMovie} />} />
         </div>
       </div>
     );
@@ -46,7 +46,6 @@ const getVisibleMovies = (movies, filter) => {
 }
 
 const mapStateToProps = function (state) {
-  console.log(state.movies);
   return {
     movies: getVisibleMovies(state.movies, state.visibilityFilter)
   }
@@ -54,20 +53,18 @@ const mapStateToProps = function (state) {
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    onMovieClick: (id) =>
-      dispatch(toggleMovie(id)),
 
     onMovieAdd: (movie) =>
       dispatch(addMovie(movie)),
 
-    onMovieRemove: (index) =>
-      dispatch(removeMovie(index)),
+    onMovieRemove: (id) =>
+      dispatch(removeMovie(id)),
 
-      onSetVisibilityFilter: (filter) =>
-        dispatch(setVisibilityFilter(filter)),
+    onSetVisibilityFilter: (filter) =>
+      dispatch(setVisibilityFilter(filter)),
 
-      onToggleMovie: (index) =>
-        dispatch(toggleMovie(index))
+    onToggleMovie: (id) =>
+      dispatch(toggleMovie(id))
   }
 }
 
