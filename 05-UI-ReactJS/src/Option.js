@@ -1,5 +1,7 @@
 import React from 'react';
 import arrow from './arrow.png';
+import './Option.scss';
+import Button from './Button';
 
 const Option = React.createClass({
 
@@ -13,20 +15,27 @@ const Option = React.createClass({
     this.setState({formVisible: !this.state.formVisible});
   },
 
+  getButtonProps: function () {
+    return {
+      className: "Option--item",
+      onClick: this.onClick
+    };
+  },
+
   render() {
     return (
-      <div className="App-option">
-        <button onClick={this.onClick} className="option">
-          <h2 className="option-title">{this.props.title}</h2>
-          <img className="option-arrow" src={arrow} alt="arrow" />
-        </button>
+      <div className="Option">
+        <Button {...this.getButtonProps()}>
+          <h2 className="Option--item--title">{this.props.title}</h2>
+          <img className="Option--item--arrow" src={arrow} alt="arrow" />
+        </Button>
         {this.renderContent()}
       </div>
     )
   },
 
   renderContent: function () {
-    return (this.state.formVisible) ? this.props.option : null;
+    return (this.state.formVisible) ? <div className="Option--content">{this.props.option}</div> : null;
   }
 })
 

@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
-import MovieItem from './MovieItem.js';
+import FormItem from './FormItem.js';
+import Button from './Button';
+import './Button.scss';
 
 const MovieForm = React.createClass({
 
@@ -37,36 +39,42 @@ const MovieForm = React.createClass({
 
   render() {
     return (
-      <div className="option-box">
-        <MovieItem value={this.state.name} onChange={this.handleInputChange.bind(this, 'name')} item="Movie's name: " type="text" />
-        <MovieItem value={this.state.year} onChange={this.handleInputChange.bind(this, 'year')} item="Movie's year: " type="number" />
-        <MovieItem value={this.state.duration} onChange={this.handleInputChange.bind(this, 'duration')} item="Movie's duration (in minutes): " type="number" />
-        <button className={this.getButtonClass(true)} onClick={this.watched}>Watched</button>
-        <button className={this.getButtonClass(false)} onClick={this.notWatched}>Not watched</button>
-        <button className="App-button" type="submit" onClick={this.click}>
-          Submit
-          </button>
+      <div>
+        <FormItem value={this.state.name} onChange={this.handleInputChange.bind(this, 'name')} item="Movie's name: " type="text" />
+        <FormItem value={this.state.year} onChange={this.handleInputChange.bind(this, 'year')} item="Movie's year: " type="number" />
+        <FormItem value={this.state.duration} onChange={this.handleInputChange.bind(this, 'duration')} item="Movie's duration (in minutes): " type="number" />
+        <Button {...this.getButtonProps(this.watched, true)}>Watched</Button>
+        <Button {...this.getButtonProps(this.notWatched,false)}>Not watched</Button>
+        <Button {...this.getButtonProps(this.click)} className="Button" type="submit">Submit</Button>
       </div>
+
     );
+  },
+
+  getButtonProps: function (onClick, watchedButton) {
+    return {
+      className: this.getButtonClass(watchedButton),
+      onClick: onClick
+    };
   },
 
   getButtonClass: function (watchedButton) {
     if (watchedButton) {
       return classNames(
-        'App-button--option',
-        'App-button--watched',
+        'Button--MovieForm',
+        'Button_green',
           {
-          'App-button--notwatched': false,
-          'App-button--watched--selected': (this.state.watched === watchedButton)
+          'Button_red': false,
+          'Button_green-selected': (this.state.watched === watchedButton)
         }
       );
     } else {
       return classNames(
-        'App-button--option',
-        'App-button--notwatched',
+        'Button--MovieForm',
+        'Button_red',
           {
-          'App-button--watched': false,
-          'App-button--notwatched--selected': (this.state.watched === watchedButton)
+          'Button_green': false,
+          'Button_red-selected': (this.state.watched === watchedButton)
         }
       );
     }

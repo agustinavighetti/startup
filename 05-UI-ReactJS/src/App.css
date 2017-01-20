@@ -6,7 +6,7 @@
   padding-bottom: 30px;
 }
 
-.App-button {
+.button {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #555ceb), color-stop(1, #162085));
 	background:-moz-linear-gradient(top, #555ceb 5%, #162085 100%);
 	background:-webkit-linear-gradient(top, #555ceb 5%, #162085 100%);
@@ -31,7 +31,7 @@
 	text-shadow:1px -1px 0px #000000;
 }
 
-.App-button:hover {
+.button:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #162085), color-stop(1, #555ceb));
 	background:-moz-linear-gradient(top, #162085 5%, #555ceb 100%);
 	background:-webkit-linear-gradient(top, #162085 5%, #555ceb 100%);
@@ -42,18 +42,30 @@
 	background-color:#162085;
 }
 
-.App-button:active {
+.button:active {
 	position:relative;
 	top:1px;
 }
 
-.App-button--delete {
+.MovieList--button_delete {
   display: inline-block;
   float: left;
-  margin: 15px 0 0 10px;
+  margin: 30px 0 0 20px;
 }
 
-.App-button--option {
+.MovieList--button_delete:hover {
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24437), color-stop(1, #c62d1f));
+background:-moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+background:-webkit-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+background:-o-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+background:-ms-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24437', endColorstr='#c62d1f',GradientType=0);
+background-color:#f24437;
+}
+
+
+.MovieForm--button {
   -moz-box-shadow:inset 0px 1px 3px 0px #c0c1c2;
 	-webkit-box-shadow:inset 0px 1px 3px 0px #c0c1c2;
 	box-shadow:inset 0px 1px 3px 0px #c0c1c2;
@@ -75,15 +87,11 @@
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
+  margin: 0 2.5%;
 	padding:8px 0;
 	text-decoration:none;
 	text-shadow:2px -1px 0px #545561;
-  width: 50%;
-}
-
-.App-button--option:active {
-  position:relative;
-  top:1px;
+  width: 45%;
 }
 
 .App-button--select {
@@ -91,41 +99,43 @@
   height: 30px;
 }
 
-.App-button--watched:hover, .App-button--watched--selected {
+.MovieForm--button_watched:hover, .MovieForm--button_watched-selected {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #9bd17d), color-stop(1, #00b02f));
   background:-moz-linear-gradient(top, #9bd17d 5%, #00b02f 100%);
   background:-webkit-linear-gradient(top, #9bd17d 5%, #00b02f 100%);
   background:-o-linear-gradient(top, #9bd17d 5%, #00b02f 100%);
   background:-ms-linear-gradient(top, #9bd17d 5%, #00b02f 100%);
   background:linear-gradient(to bottom, #9bd17d 5%, #00b02f 100%);
+  border:1px solid #0f741c;
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9bd17d', endColorstr='#00b02f',GradientType=0);
   background-color:#9bd17d;
 }
 
-.App-button--notwatched:hover, .App-button--notwatched--selected {
+.MovieForm--button_notwatched:hover, .MovieForm--button_notwatched-selected, .MovieList--button_delete {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff7a7a), color-stop(1, #ff1a00));
 	background:-moz-linear-gradient(top, #ff7a7a 5%, #ff1a00 100%);
 	background:-webkit-linear-gradient(top, #ff7a7a 5%, #ff1a00 100%);
 	background:-o-linear-gradient(top, #ff7a7a 5%, #ff1a00 100%);
 	background:-ms-linear-gradient(top, #ff7a7a 5%, #ff1a00 100%);
 	background:linear-gradient(to bottom, #ff7a7a 5%, #ff1a00 100%);
+  border:1px solid #740f12;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff7a7a', endColorstr='#ff1a00',GradientType=0);
 	background-color:#ff7a7a;
 }
 
-.App-logo {
+.header--logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
-.App-header {
+.App--header {
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
 }
 
-.App-intro {
+.App--intro {
   font-size: large;
 }
 
@@ -134,7 +144,7 @@
   width: 100%;
 }
 
-.App-option {
+.Option {
   margin: 40px auto;
   width: 80%;
 }
@@ -155,7 +165,7 @@ li {
   list-style: none;
 }
 
-.ListMovie {
+.MovieList--list {
   background-color: white;
   border-bottom: solid black 2px;
   border-radius: 8px;
@@ -203,7 +213,7 @@ li {
   margin: 20px 0;
 }
 
-.option {
+.Option-item {
   -moz-box-shadow: 0px 0px 10px #ffffff;
   -webkit-box-shadow: 0px 0px 10px #ffffff;
   box-shadow: 0px 0px 10px #ffffff;
@@ -216,15 +226,15 @@ li {
   padding: 0 20px;
 }
 
-.option:hover {
+.Option-item:hover {
   background-color: rgb(81, 16, 150);
 }
 
-.option-arrow {
+.Option-item--arrow {
   vertical-align: middle;
 }
 
-.option-box {
+.App-option {
   -moz-box-shadow: 0px 0px 10px #ffffff;
   -webkit-box-shadow: 0px 0px 10px #ffffff;
   background-color: rgb(211, 215, 222);
@@ -236,11 +246,11 @@ li {
   min-height: 35px;
 }
 
-.option-box-noMovie {
+.MovieForm-noMovie {
   background-color: white;
 }
 
-.option-title {
+.Option-item--title {
   color: #fff;
   display: inline-block;
   margin-right: 35%;

@@ -1,0 +1,36 @@
+@import url("Button.scss");
+
+.App {
+  text-align: center;
+  background-color: rgb(187, 189, 194);
+  height: auto;
+  min-height: 900px;
+  padding-bottom: 30px;
+
+  &--intro {
+    font-weight: bold;
+    font-size: large;
+  }
+/*
+  &--movies {
+    padding: 10px 0;
+    width: 100%;
+  }
+*/
+  .header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+
+    &--logo {
+      animation: App-logo-spin infinite 20s linear;
+      height: 80px;
+    }
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,37 @@
+.MovieList {
+
+  &--list {
+    padding: 0;
+  }
+
+  &--noMovie {
+    background-color: white;
+  }
+
+  &--counter {
+    text-align: left;
+    display: inline-block;
+    width: 50%;
+  }
+
+  &--showOptions {
+    display: inline-block;
+    width: 50%;
+  }
+
+  &--movie {
+    background-color: white;
+    border-bottom: solid black 2px;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+
+    &--items {
+      width: 80%;
+      display: inline-block;
+      list-style: none;
+    }
+
+  }
+}
