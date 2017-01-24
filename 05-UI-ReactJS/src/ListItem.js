@@ -1,11 +1,11 @@
-import React from 'react';
 import './ListItem.scss';
+import React from 'react';
 
 const ListItem = React.createClass({
 
   propTypes: {
-    label: React.PropTypes.string.isRequired,
-    data: React.PropTypes.string.isRequired
+    data: React.PropTypes.string.isRequired,
+    label: React.PropTypes.string.isRequired
   },
 
   render() {

@@ -1,14 +1,30 @@
-import { connect } from 'react-redux'
-import React from 'react';
 import './App.scss';
-import Option from './Option'
+import { addMovie, removeMovie, toggleMovie, setVisibilityFilter } from './actions';
+import { connect } from 'react-redux'
+import { VisibilityFilters } from './filters';
 import logo from './logo.svg';
-// import './App.css';
 import MovieForm from './MovieForm';
 import MovieList from './MovieList';
-import { addMovie, removeMovie, toggleMovie, setVisibilityFilter } from './actions';
+import Option from './Option'
+import React from 'react';
 
+const { SHOW_ALL } = VisibilityFilters;
+const { SHOW_WATCHED } = VisibilityFilters;
+const { SHOW_NON_WATCHED } = VisibilityFilters;
 let App = React.createClass({
+
+  getListOptionProps: function () {
+    return (
+      <MovieList filter={this.props.filter} movies={this.props.movies} onMovieRemove={this.props.onMovieRemove}
+      onSetVisibilityFilter={this.props.onSetVisibilityFilter} onToggleMovie={this.props.onToggleMovie} />
+    )
+  },
+
+  getFormOptionProps: function () {
+    return (
+      <MovieForm movies={this.props.movies} onMovieAdd={this.props.onMovieAdd} />
+    )
+  },
 
   render: function () {
     return (
@@ -20,9 +36,8 @@ let App = React.createClass({
         <p className="App--intro">
           Here you can save all the movies you like!
         </p>
-        <Option title="Add a new movie" option={<MovieForm movies={this.props.movies} onMovieAdd={this.props.onMovieAdd} />} />
-        <Option title="Watch your list of movies" option={<MovieList filter={this.props.filter} movies={this.props.movies} onMovieRemove={this.props.onMovieRemove}
-        onSetVisibilityFilter={this.props.onSetVisibilityFilter} onToggleMovie={this.props.onToggleMovie} />} />
+        <Option option={this.getFormOptionProps()}  title="Add a new movie" />
+        <Option option={this.getListOptionProps()} title="Watch your list of movies" />
       </div>
     );
   }
@@ -30,14 +45,14 @@ let App = React.createClass({
 
 const getVisibleMovies = (movies, filter) => {
   switch (filter) {
-    case 'SHOW_ALL':
+    case SHOW_ALL:
       return movies
 
-    case 'SHOW_WATCHED':
-      return movies.filter(m => m.watched)
+    case SHOW_WATCHED:
+      return movies.filter(movie => movie.watched)
 
-    case 'SHOW_NON_WATCHED':
-      return movies.filter(m => !m.watched)
+    case SHOW_NON_WATCHED:
+      return movies.filter(movie => !movie.watched)
 
     default:
       return movies

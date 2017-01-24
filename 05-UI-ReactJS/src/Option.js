@@ -1,9 +1,14 @@
-import React from 'react';
-import arrow from './arrow.png';
 import './Option.scss';
+import arrow from './arrow.png';
 import Button from './Button';
+import React from 'react';
 
 const Option = React.createClass({
+
+  propTypes: {
+    option: React.PropTypes.node,
+    title: React.PropTypes.string
+  },
 
   getInitialState: function() {
     return {

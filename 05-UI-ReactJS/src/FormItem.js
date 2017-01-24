@@ -1,7 +1,16 @@
-import React from 'react';
 import './FormItem.scss';
+import React from 'react';
 
 const FormItem = React.createClass({
+
+  propTypes: {
+    className: React.PropTypes.string,
+    item: React.PropTypes.string,
+    onClick: React.PropTypes.func,
+    onChange: React.PropTypes.func,
+    type: React.PropTypes.string,
+    value: React.PropTypes.string
+  },
 
   getInitialState() {
     return {
@@ -17,11 +26,20 @@ const FormItem = React.createClass({
       }
   },
 
+  getInputProps: function () {
+    return {
+      className: "FormItem--input",
+      onChange: this.handleChange,
+      type: this.props.type,
+      value: this.props.value
+    }
+  },
+
   render() {
     return (
       <div className="FormItem">
         <label className="FormItem--label">{this.props.item}</label>
-        <input className="FormItem--input" value={this.props.value} type={this.props.type} onChange={this.handleChange} required />
+        <input {...this.getInputProps()} required />
       </div>
     )
   }

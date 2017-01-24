@@ -1,18 +1,29 @@
-import classNames from 'classnames';
-import React from 'react';
-import FormItem from './FormItem.js';
-import Button from './Button';
 import './Button.scss';
+import Button from './Button';
+import classNames from 'classnames';
+import FormItem from './FormItem.js';
+import React from 'react';
 
 const MovieForm = React.createClass({
 
+  propTypes: {
+    className: React.PropTypes.string,
+    movies: React.PropTypes.arrayOf(React.PropTypes.shape({
+      duration: React.PropTypes.string.isRequired,
+      name: React.PropTypes.string.isRequired,
+      watched: React.PropTypes.bool.isRequired,
+      year: React.PropTypes.string.isRequired
+    }).isRequired).isRequired,
+    onMovieAdd: React.PropTypes.func
+  },
+
   getInitialState: function() {
     return {
-      name:'',
-      year: '',
       duration: '',
+      id: this.props.movies.length,
+      name:'',
       watched: '',
-      id: this.props.movies.length
+      year: ''
     }
   },
 
@@ -29,56 +40,69 @@ const MovieForm = React.createClass({
       this.props.onMovieAdd(this.state);
 
       this.setState({
-        name: '',
-        year: '',
         duration: '',
-        watched: ''
+        name: '',
+        watched: '',
+        year: ''
       });
+    }
+  },
+
+  getFormItemProps: function (movieData, durationExplication) {
+    let duration = durationExplication;
+
+    if (duration) {
+      return {
+        value: this.state[movieData],
+        onChange: this.handleInputChange.bind(this, movieData),
+        item: "Movie's "+movieData+durationExplication+": "
+      }
+    } else {
+      return {
+        value: this.state[movieData],
+        onChange: this.handleInputChange.bind(this, movieData),
+        item: "Movie's "+movieData+": "
+      }
     }
   },
 
   render() {
     return (
       <div>
-        <FormItem value={this.state.name} onChange={this.handleInputChange.bind(this, 'name')} item="Movie's name: " type="text" />
-        <FormItem value={this.state.year} onChange={this.handleInputChange.bind(this, 'year')} item="Movie's year: " type="number" />
-        <FormItem value={this.state.duration} onChange={this.handleInputChange.bind(this, 'duration')} item="Movie's duration (in minutes): " type="number" />
-        <Button {...this.getButtonProps(this.watched, true)}>Watched</Button>
+        <FormItem {...this.getFormItemProps("name")} type="text" />
+        <FormItem {...this.getFormItemProps("year")} type="number" />
+        <FormItem {...this.getFormItemProps("duration", " (in minutes)")} type="number" />
+{/*        <Button {...this.getButtonProps(this.watched, true)}>Watched</Button>
         <Button {...this.getButtonProps(this.notWatched,false)}>Not watched</Button>
         <Button {...this.getButtonProps(this.click)} className="Button" type="submit">Submit</Button>
-      </div>
+*/}        <Button {...this.getButtonProps(true)}>Watched</Button>
+        <Button {...this.getButtonProps(false)}>Not watched</Button>
+        <Button onClick={this.click} className="Button" type="submit">Submit</Button>
 
+      </div>
     );
   },
 
-  getButtonProps: function (onClick, watchedButton) {
+  getButtonProps: function (watchedButton) {
     return {
       className: this.getButtonClass(watchedButton),
-      onClick: onClick
+      onClick: this.wasWatched.bind(this, watchedButton)
     };
   },
 
   getButtonClass: function (watchedButton) {
-    if (watchedButton) {
-      return classNames(
-        'Button--MovieForm',
-        'Button_green',
-          {
-          'Button_red': false,
-          'Button_green-selected': (this.state.watched === watchedButton)
-        }
-      );
-    } else {
-      return classNames(
-        'Button--MovieForm',
-        'Button_red',
-          {
-          'Button_green': false,
-          'Button_red-selected': (this.state.watched === watchedButton)
-        }
-      );
-    }
+
+    return classNames(
+      {
+        'Button_MovieForm': true,
+        'Button_green': (watchedButton),
+        'Button_red': (!watchedButton),
+        'Button_green-selected': (watchedButton && this.state.watched),
+        'Button_red-selected': (!watchedButton && this.state.watched === false)
+      }
+    );
   },
+
 
   handleInputChange: function (field, event) {
 
@@ -89,12 +113,9 @@ const MovieForm = React.createClass({
     this.setState(newState);
   },
 
-  watched: function() {
-    this.setState({watched: true});
-  },
 
-  notWatched: function() {
-    this.setState({watched: false});
+  wasWatched: function (wasWatched) {
+    this.setState({watched: wasWatched})
   }
 });
 

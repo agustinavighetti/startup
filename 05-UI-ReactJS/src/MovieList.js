@@ -1,20 +1,28 @@
-import React from 'react';
+import './Option.scss'
+import './MovieList.scss';
+import { VisibilityFilters } from './filters';
+import Button from './Button';
 import classNames from 'classnames';
 import ListItem from './ListItem';
-import Button from './Button';
-import './MovieList.scss';
-import './MovieForm.scss'
+import React from 'react';
+
+const { SHOW_ALL } = VisibilityFilters;
+const { SHOW_WATCHED } = VisibilityFilters;
+const { SHOW_NON_WATCHED } = VisibilityFilters;
 
 const MovieList = React.createClass({
 
   propTypes: {
     filter: React.PropTypes.string,
     movies: React.PropTypes.arrayOf(React.PropTypes.shape({
-      name: React.PropTypes.string.isRequired,
-      year: React.PropTypes.string.isRequired,
       duration: React.PropTypes.string.isRequired,
-      watched: React.PropTypes.bool.isRequired
-    }).isRequired).isRequired
+      name: React.PropTypes.string.isRequired,
+      watched: React.PropTypes.bool.isRequired,
+      year: React.PropTypes.string.isRequired
+    }).isRequired).isRequired,
+    onMovieRemove: React.PropTypes.func,
+    onSetVisibilityFilter: React.PropTypes.func,
+    onToggleMovie: React.PropTypes.func
   },
 
   showList: function () {
@@ -44,18 +52,17 @@ const MovieList = React.createClass({
   },
 
   getButtonClass: function (type) {
-    console.log(type, this.props.filter)
-      return classNames({
-        'Button': true,
-        'Button--MovieList_filter': true,
-        'Button--MovieList_filter-selected': (type === this.props.filter)
-      });
+    return classNames({
+      'Button': true,
+      'Button_filter': true,
+      'Button_filter-selected': (type === this.props.filter)
+    });
   },
 
   getButtonProps: function (onClick, type) {
     return {
-      onClick: onClick,
-      className: this.getButtonClass(type)
+      className: this.getButtonClass(type),
+      onClick: onClick
     };
   },
 
@@ -84,7 +91,6 @@ const MovieList = React.createClass({
 
   deleteMovie: function (field, event) {
     this.props.onMovieRemove(field);
-    console.log('MOVIES  ',this.props.movies);
   },
 
   render() {
@@ -96,9 +102,9 @@ const MovieList = React.createClass({
           You have {movies.length} movies on your list.
         </p>
         <div className="MovieList--showOptions">
-          <Button {...this.getButtonProps(this.props.onSetVisibilityFilter.bind(this, 'SHOW_ALL'), 'SHOW_ALL')}>Show all</Button>
-          <Button {...this.getButtonProps(this.props.onSetVisibilityFilter.bind(this, 'SHOW_WATCHED'), 'SHOW_WATCHED')}>Show watched</Button>
-          <Button {...this.getButtonProps(this.props.onSetVisibilityFilter.bind(this, 'SHOW_NON_WATCHED'), 'SHOW_NON_WATCHED')}>Show not watched</Button>
+          <Button {...this.getButtonProps(this.props.onSetVisibilityFilter.bind(this, SHOW_ALL), SHOW_ALL)}>Show all</Button>
+          <Button {...this.getButtonProps(this.props.onSetVisibilityFilter.bind(this, SHOW_WATCHED), SHOW_WATCHED)}>Show watched</Button>
+          <Button {...this.getButtonProps(this.props.onSetVisibilityFilter.bind(this, SHOW_NON_WATCHED), SHOW_NON_WATCHED)}>Show not watched</Button>
         </div>
         {this.showList()}
       </div>

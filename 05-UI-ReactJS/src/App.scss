@@ -1,27 +1,20 @@
-@import url("Button.scss");
-
 .App {
-  text-align: center;
-  background-color: rgb(187, 189, 194);
+  background-color: #bbbdc2;
   height: auto;
   min-height: 900px;
   padding-bottom: 30px;
+  text-align: center;
 
   &--intro {
-    font-weight: bold;
     font-size: large;
+    font-weight: bold;
   }
-/*
-  &--movies {
-    padding: 10px 0;
-    width: 100%;
-  }
-*/
+
   .header {
     background-color: #222;
+    color: white;
     height: 150px;
     padding: 20px;
-    color: white;
 
     &--logo {
       animation: App-logo-spin infinite 20s linear;

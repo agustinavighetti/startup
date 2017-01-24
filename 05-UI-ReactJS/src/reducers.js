@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import { VisibilityFilters } from './actions';
 import { ADD_MOVIE, REMOVE_MOVIE, TOGGLE_MOVIE, SET_VISIBILITY_FILTER } from './actions';
+import { combineReducers } from 'redux';
+import { VisibilityFilters } from './filters';
 
 const { SHOW_ALL } = VisibilityFilters;
 
@@ -21,13 +21,9 @@ function movies(state = JSON.parse(localStorage.getItem('movies')) || [], action
 
         state.map((movie, id) => {
             if (movie.id !== action.id) {
-              console.log('id  ',id);
-              console.log('movie.id  ',movie.id);
-              console.log('action.id  ',action.id);
               return newMovies.push(movie)
             }
         });
-        console.log(newMovies);
         localStorage.setItem('movies', JSON.stringify(newMovies))
         return newMovies;
 
@@ -59,8 +55,8 @@ function visibilityFilter(state = SHOW_ALL, action) {
 }
 
 const moviesApp = combineReducers({
-  visibilityFilter,
-  movies
+  movies,
+  visibilityFilter
 });
 
 export default moviesApp;
