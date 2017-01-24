@@ -1,0 +1,92 @@
+$ButoonBorder: #333029;
+$ButtonColorBottom: #162085;
+$ButtonColorTop: #555ceb;
+$ButtonFilterSelectedBottom: #ccc2a6;
+$ButtonFilterSelectedTop: #eae0c2;
+$ButtonGreenBottom: #00b02f;
+$ButtonGreenTop: #9bd17d;
+$ButtonRedBottom: #ff1a00;
+$ButtonRedTop: #ff7a7a;
+$ButtonRedDeleteTop: #c62d1f;
+$MovieFormColorBottom: #9e9ea6;
+$MovieFormColorTop: #545454;
+$white: #ffffff;
+
+.Button {
+	background: linear-gradient(to bottom, $ButtonColorTop 5%, $ButtonColorBottom 100%);
+	border: 2px solid $ButoonBorder;
+	border-radius: 15px;
+	color: $white;
+	cursor: pointer;
+	display: inline-block;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+  margin-top: 10px;
+	padding: 6px 16px;
+	text-decoration: none;
+	text-shadow: 1px -1px 0px #000000;
+
+	&:hover {
+		background: linear-gradient(to bottom, $ButtonColorBottom 5%, $ButtonColorTop 100%);
+	}
+
+	&:active {
+		position: relative;
+		top: 1px;
+	}
+
+	&_delete {
+	  display: inline-block;
+	  float: left;
+	  margin: 30px 0 0 20px;
+	}
+
+	&_MovieForm {
+		background: linear-gradient(to bottom, $MovieFormColorTop 5%, $MovieFormColorBottom 100%);
+		border: 1px solid #dedede;
+		border-radius: 16px;
+		box-shadow: inset 0px 1px 3px 0px #c0c1c2;
+		color: $white;
+		font-size: 15px;
+		font-weight: bold;
+	  margin: 0 2.5%;
+		padding: 8px 0;
+		text-shadow: 2px -1px 0px #545561;
+	  width: 45%;
+	}
+
+	&_green {
+		&:hover, &-selected {
+			background: linear-gradient(to bottom, $ButtonGreenTop 5%, $ButtonGreenBottom 100%);
+			border: 1px solid #0f741c;
+		}
+	}
+
+	&_red {
+		&:hover, &-selected, &_delete {
+			background: linear-gradient(to bottom, $ButtonRedTop 5%, $ButtonRedBottom 100%);
+			border: 1px solid #740f12;
+		}
+
+		&_delete:hover {
+			background: linear-gradient(to bottom, $ButtonRedBottom 5%, $ButtonRedTop 100%);
+		}
+	}
+
+	&_filter {
+		font-size: 13px;
+		font-weight: lighter;
+		height: 30px;
+		margin: 20px 5px 40px 5px;
+		width: auto;
+
+		&-selected, &-selected:hover {
+			background: linear-gradient(to bottom, $ButtonFilterSelectedTop 5%, $ButtonFilterSelectedBottom 100%);
+			border: 2px solid $ButoonBorder;
+			box-shadow: #1c1b18;
+			color: #505739;
+			text-shadow: 0px 1px 0px $white;
+		}
+	}
+}

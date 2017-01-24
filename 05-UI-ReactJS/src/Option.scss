@@ -1,0 +1,41 @@
+$white: #ffffff;
+
+.Option {
+  margin: 40px auto;
+  width: 80%;
+
+  &--content {
+    background-color: #d3d7de;
+    border: solid $white 2px;
+    border-radius: 5px;
+    border-top: none;
+    box-shadow: 0px 0px 10px $white;
+    min-height: 35px;
+    padding: 1px 30px 15px 30px;
+  }
+
+  &--item {
+    background-color: #2d0940;
+    border: solid #e5d5f4 2px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px $white;
+    margin: auto;
+    padding: 0 20px;
+    text-align: right;
+    width: 100%;
+
+      &:hover {
+        background-color: #511096;
+      }
+
+      &--arrow {
+        vertical-align: middle;
+      }
+
+      &--title {
+        color: $white;
+        display: inline-block;
+        margin-right: 35%;
+      }
+  }
+}

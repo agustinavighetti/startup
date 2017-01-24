@@ -1,0 +1,13 @@
+.ListItem {
+  text-align: left;
+
+  &--data {
+    display: inline;
+    margin-left: 5px;
+  }
+
+  &--label {
+    display: inline-block;
+    font-weight: bold;
+  }
+}

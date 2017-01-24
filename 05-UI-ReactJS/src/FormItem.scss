@@ -1,0 +1,14 @@
+.FormItem {
+  display: block;
+  margin: 20px 0;
+  text-align: right;
+
+    &--label {
+      font-weight: bold;
+      padding-right: 30px;
+    }
+
+    &--input {
+      width: 50%;
+    }
+}
